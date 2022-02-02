@@ -1,5 +1,5 @@
 console.log("welcome");
-const url = "http://localhost:5000/api/v1/products/uploads";
+const url = "https://glacial-waters-86710.herokuapp.com/api/v1/products/uploads";
 const fileFormDOM = document.querySelector(".file-form");
 
 const fileInputDOM = document.querySelector("#file");
@@ -16,7 +16,6 @@ fileFormDOM.addEventListener("submit", async (e) => {
       headers: { "Content-Type": "multipart/form-data" },
     });
     console.log(data.CSV_Json);
-    console.log("this worked");
   } catch (error) {
     // console.log(error);
     console.log(error);

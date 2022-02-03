@@ -6,10 +6,14 @@ const fileInputDOM = document.querySelector("#file");
 
 fileFormDOM.addEventListener("submit", async (e) => {
   e.preventDefault();
+  const content = document.getElementById("content").value;
   const csvFile = fileInputDOM.files[0];
   console.log(csvFile);
+  
   const formData = new FormData();
   formData.append("csvFile", csvFile);
+  formData.append("content", content);
+  
   console.log(formData);
   try {
     const { data } = await axios.post(url, formData, {
